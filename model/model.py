@@ -185,6 +185,8 @@ class FrozenInTime(BaseModel):
         return self.aggregation(video_embeddings, batch_size)
 
     def compute_text(self, text_data):
+        if text_data == None:
+            return None
         if self.text_params['model'].startswith('bert'):
             text_embeddings = self.text_model(text_data['input_ids'], attention_mask=text_data['attention_mask'])[
                 'pooler_output']
@@ -208,6 +210,8 @@ class FrozenInTime(BaseModel):
         return text_embeddings
 
     def compute_video(self, video_data):
+        if video_data == None:
+            return None
         video_embeddings = self.video_model(video_data)
         video_embeddings = self.vid_proj(video_embeddings)
         return video_embeddings
