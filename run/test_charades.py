@@ -155,7 +155,7 @@ if __name__ == '__main__':
     args = argparse.ArgumentParser(description='PyTorch Template')
 
     args.add_argument('-r', '--resume',
-                      default='D:/University/Contest/VBS2025/HierVL/download/checkpoints/charades_hievl_sa.pth', # FT checkpoint
+                      default='/kaggle/input/hiervl-charades/charades_hiervl_sa.pth', # FT checkpoint
                       #default='download/checkpoints/hiervl/hievl_sa.pth', #ZS checkpoint
                       #default='download/checkpoints/hiervl/hievl_sa_2.pth', #ZS best checkpoint
                       help='path to latest checkpoint (default: None)')

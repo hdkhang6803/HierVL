@@ -26,7 +26,7 @@
                 "args":{
                     "dataset_name": "CharadesEgo",
                     "data_dir": "E:/CharadesEgo_v1_480/videos",
-                    "meta_dir": "D:/University/Contest/VBS2025/HierVL/dataset/charades",
+                    "meta_dir": "/kaggle/working/HierVL/dataset/charades",
                     "reader": "cv2_charades",
                     "shuffle": true,
                     "num_workers": 16,

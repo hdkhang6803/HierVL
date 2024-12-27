@@ -70,7 +70,7 @@ def run_single_image():
     args = argparse.ArgumentParser(description='PyTorch Action Recognition for Single Image')
 
     args.add_argument('-r', '--resume',
-                      default='D:/University/Contest/VBS2025/HierVL/download/checkpoints/charades_hievl_sa.pth',
+                      default='/kaggle/input/hiervl-charades/charades_hiervl_sa.pth',
                       help='Path to latest checkpoint (default: None)')
     args.add_argument('-gpu', '--gpu', default=1, type=str,
                       help='Indices of GPUs to enable (default: all)')
