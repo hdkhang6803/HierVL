@@ -134,7 +134,9 @@ def eval():
     with open(args.class_labels_file, 'r') as charades:
         csv_reader = list(reader(charades))
     for line in csv_reader:
-        cls_arr.append(line[0])
+        label = line.strip()
+        label = label.replace("/", " or ")
+        cls_arr.append(label)
 
     # Load tokenizer
     tokenizer = transformers.AutoTokenizer.from_pretrained(config['arch']['args']['text_params']['model'])
