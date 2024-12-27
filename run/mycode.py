@@ -115,7 +115,6 @@ def eval():
                       help='test time temporal augmentation, repeat samples with different start times.')
     args.add_argument('--save_feats', default=None,
                       help='path to store text & video feats, this is for saving embeddings if you want to do offline retrieval.')
-                          args.add_argument('--save_dir', default='./experiments', type=str)
     args.add_argument('--save_dir', default='./experiments', type=str)
     args.add_argument('--split', default='test', choices=['train', 'val', 'test'],
                       help='split to evaluate on.')
