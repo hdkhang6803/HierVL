@@ -133,6 +133,7 @@ def eval(test_images_list_path, class_labels_file, resume, save_dir):
     args.class_labels_file = class_labels_file
     args.resume = resume
     args.save_dir = save_dir
+    print(args)
 
     # Load action classes
     cls_arr = []
