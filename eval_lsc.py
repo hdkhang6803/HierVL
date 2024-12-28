@@ -122,18 +122,20 @@ def eval(test_images_list_path, class_labels_file, resume, save_dir):
     args.add_argument('--batch_size', default=1, type=int,
                       help='size of batch')
     args.add_argument('--class_labels_file', default="D:/VSCode/THESIS/LaViLa/datasets/CharadesEgo/CharadesEgo/Charades_v1_classes.txt", type=str,)
-    config = ConfigParser(args, test=True, eval_mode='charades')
-
-    args = args.parse_args()
-    os.environ["CUDA_VISIBLE_DEVICES"] =  ""+str(args.gpu)
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
+    
     # Assign args from function params
     args.test_images_list_path = test_images_list_path
     args.class_labels_file = class_labels_file
     args.resume = resume
     args.save_dir = save_dir
     print(args)
+
+    config = ConfigParser(args, test=True, eval_mode='charades')ff
+    args = args.parse_args()
+    os.environ["CUDA_VISIBLE_DEVICES"] =  ""+str(args.gpu)
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    
 
     # Load action classes
     cls_arr = []
