@@ -96,7 +96,7 @@ def save_image(output_dir, predicted_class, image_path):
     shutil.copy(image_path, dest_folder)
     print(f"Copied {image_path} to {dest_folder}")
 
-def eval(test_images_list_path, class_labels_file, resume, save_dir):
+def eval(test_images_list_path=None, class_labels_file=None, resume=None, save_dir=None):
     print(0)
     args = argparse.ArgumentParser(description='PyTorch Action Recognition for Single Image')
 
@@ -127,11 +127,11 @@ def eval(test_images_list_path, class_labels_file, resume, save_dir):
     
     print(2)
     # Assign args from function params
-    args.test_images_list_path = test_images_list_path
-    args.class_labels_file = class_labels_file
-    args.resume = resume
-    args.save_dir = save_dir
-    print(args)
+    # args.test_images_list_path = test_images_list_path
+    # args.class_labels_file = class_labels_file
+    # args.resume = resume
+    # args.save_dir = save_dir
+    # print(args)
 
     config = ConfigParser(args, test=True, eval_mode='charades')
     print(config)
@@ -184,5 +184,5 @@ def eval(test_images_list_path, class_labels_file, resume, save_dir):
         print(f'Predicted Action Class: {predicted_class}')
         save_image(args.save_dir, predicted_class, image_path)
 
-# if __name__ == '__main__':
-#     eval()
+if __name__ == '__main__':
+    eval()
