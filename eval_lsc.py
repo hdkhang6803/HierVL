@@ -97,8 +97,10 @@ def save_image(output_dir, predicted_class, image_path):
     print(f"Copied {image_path} to {dest_folder}")
 
 def eval(test_images_list_path, class_labels_file, resume, save_dir):
+    print(0)
     args = argparse.ArgumentParser(description='PyTorch Action Recognition for Single Image')
 
+    print(1)
     args.add_argument('-r', '--resume',
                       default='/kaggle/input/hiervl-charades/charades_hiervl_sa.pth',
                       help='Path to latest checkpoint (default: None)')
@@ -123,6 +125,7 @@ def eval(test_images_list_path, class_labels_file, resume, save_dir):
                       help='size of batch')
     args.add_argument('--class_labels_file', default="D:/VSCode/THESIS/LaViLa/datasets/CharadesEgo/CharadesEgo/Charades_v1_classes.txt", type=str,)
     
+    print(2)
     # Assign args from function params
     args.test_images_list_path = test_images_list_path
     args.class_labels_file = class_labels_file
