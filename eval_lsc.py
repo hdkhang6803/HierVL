@@ -134,8 +134,10 @@ def eval(test_images_list_path, class_labels_file, resume, save_dir):
     print(args)
 
     config = ConfigParser(args, test=True, eval_mode='charades')
+    print(config)
     args = args.parse_args()
-    os.environ["CUDA_VISIBLE_DEVICES"] =  ""+str(args.gpu)
+    print(args)
+    # os.environ["CUDA_VISIBLE_DEVICES"] =  ""+str(args.gpu)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     
